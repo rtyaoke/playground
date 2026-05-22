@@ -1,0 +1,6 @@
+# for mac
+.DS_Store
+
+# for python
+__pycache__/
+.venv
