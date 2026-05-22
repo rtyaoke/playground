@@ -248,17 +248,17 @@ def run_and_plot():
     plt.show()
 
 
-for name, kwargs in cases:
-    out = simulate(**kwargs)
-    print(f"\n{name}")
-    print(f"  crust set time: {out['t_crust']:.2f}s" if out["t_crust"]
-          is not None else "  crust not set")
-    if out["ruptured"]:
-        print(f"  RUPTURE at: {out['t_rupture']:.2f}s")
-        print(f"  reason: {out['reason']}")
-    else:
-        print("  no rupture within simulated time")
-    print(f"  final porosity used: {out['final_porosity']:.3f}")
+    for name, kwargs in cases:
+        out = simulate(**kwargs)
+        print(f"\n{name}")
+        print(f"  crust set time: {out['t_crust']:.2f}s" if out["t_crust"]
+            is not None else "  crust not set")
+        if out["ruptured"]:
+            print(f"  RUPTURE at: {out['t_rupture']:.2f}s")
+            print(f"  reason: {out['reason']}")
+        else:
+            print("  no rupture within simulated time")
+        print(f"  final porosity used: {out['final_porosity']:.3f}")
 
 
 if __name__ == "__main__":
